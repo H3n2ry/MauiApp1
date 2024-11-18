@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1.pastaApEv.projeto"
+             Title="projeto"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="CadetBlue">
+    <VerticalStackLayout VerticalOptions="CenterAndExpand"
+                         Padding="10">
+        <Label 
+            Text="Faça seu cadastro"
+            FontSize="35"
+            TextColor ="Beige"/>
+        
+        
+        <Frame Padding="10"
+               BackgroundColor="Silver">
+            <VerticalStackLayout>
+                <Grid RowDefinitions="auto, auto"
+                   ColumnDefinitions="*, 2*, *">
+
+
+
+
+                    <Label Grid.Row="0" Grid.Column="1"
+                          Text="GeekEvents"
+                           FontSize="25"
+                           TextColor="Black">
+
+                    </Label>
+
+                    <Label Grid.Row="1" Grid.Column="0"
+                             Text="Participantes:"
+                           TextColor="Black">
+
+                    </Label>
+
+                    <Label Grid.Row="1" Grid.Column="1"
+                           HorizontalTextAlignment="Center"
+                            TextColor="Aqua"
+                            Text="{Binding Value}"
+                            BindingContext="{x:Reference stp_Participantes}">
+                    </Label>
+
+                    <Stepper Grid.Row="1" Grid.Column="2"
+                              x:Name="stp_Participantes"
+                              Minimum="0"
+                              Maximum="10"
+                              Increment="1"
+                             BackgroundColor="Black">
+
+                    </Stepper> 
+
+
+
+                </Grid>
+
+                <Label Text="Escolha o local do evento"
+                       TextColor="Black">
+
+                </Label>
+                <Picker x:Name="pck_lugares"
+                     Title="Selecione o local"
+                     ItemDisplayBinding="{Binding Descricao}"
+                     TextColor="Aqua"
+                        BackgroundColor="Black">
+
+                </Picker>
+
+                <Frame Padding="10"
+                        Margin="10">
+                    <VerticalStackLayout>
+                        <Label Text="Datas do evento"></Label>
+                        <HorizontalStackLayout>
+                            <Label Text="data de início:"></Label>
+                            <DatePicker x:Name="dtpck_inicio"
+                                     DateSelected="dtpck_inicio_DateSelected"
+                                     Format="dd/mm/yyyy"></DatePicker>
+                        </HorizontalStackLayout>
+                        <HorizontalStackLayout>
+                            <Label Text="Data de término:"></Label>
+                            <DatePicker x:Name="dtpck_termino"
+                                     Format="dd/mm/yyyy"></DatePicker>
+                        </HorizontalStackLayout>
+                    </VerticalStackLayout>
+                </Frame>
+
+                <Button Text="Avançar" Clicked="Button_Clicked" 
+                     BackgroundColor="Aqua"></Button>
+
+
+            </VerticalStackLayout>
+        </Frame>
+    </VerticalStackLayout>
+
+</ContentPage>

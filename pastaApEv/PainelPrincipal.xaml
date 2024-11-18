@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1.pastaApEv.PainelPrincipal"
+             Title="PainelPrincipal"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="CadetBlue">
+    <VerticalStackLayout VerticalOptions="CenterAndExpand"
+                         Padding="10">
+        <Label 
+            Text="Ingressos" 
+            FontSize="45"/>
+
+        <Frame Margin="10"
+               BackgroundColor="Silver">
+
+            <HorizontalStackLayout>
+                <HorizontalStackLayout>
+                    <Label Text="Participante:  "
+                           TextColor="Black"></Label>
+                    <Label Text="{Binding QuantidadedePessoas}"  TextColor="Aqua"></Label>
+                </HorizontalStackLayout>
+            </HorizontalStackLayout>
+
+
+        </Frame><Frame Margin="10"
+               BackgroundColor="Silver">
+
+            <HorizontalStackLayout>
+                <Label Text="Local:  "
+                       TextColor="Black"/>
+                <Label Text="{Binding lugarSelecionado.Descricao}"
+                TextColor="Aqua"/>
+            </HorizontalStackLayout>
+
+        </Frame>
+
+        <Frame Margin="10">
+            <Grid ColumnDefinitions="*, *, *"
+          RowDefinitions="Auto, Auto">
+                <Label Grid.Row="0" Grid.Column="0" Text="Entrada: "></Label>
+                <Label Grid.Row="0" Grid.Column="1" Text="Término: "></Label>
+
+
+                <Label Grid.Row="1" Grid.Column="0" Text="{Binding DatadeInicio, StringFormat='{}{0:dd/MM/yyyy}'}"
+                   TextColor="Aqua"></Label>
+                <Label Grid.Row="1" Grid.Column="1" Text="{Binding datadeTermino, StringFormat='{}{0:dd/MM/yyyy}'} "
+                   TextColor="Aqua"></Label>
+            </Grid>
+        </Frame>
+
+        <Frame Margin="10">
+
+            <HorizontalStackLayout>
+                <Label Text="Vallor total: "/>
+                <Label Text="12"
+               TextColor="Aqua"/>
+            </HorizontalStackLayout>
+
+        </Frame>
+        
+        <!--{Binding Valortotal} -->
+
+        <Button Text="Voltar" Clicked="Button_Clicked"
+        HorizontalOptions="Center"
+        BackgroundColor="Aqua"></Button>
+
+    </VerticalStackLayout>
+</ContentPage>

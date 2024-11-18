@@ -1,0 +1,7 @@
+﻿[*.cs]
+
+# CS0618: O tipo ou membro é obsoleto
+dotnet_diagnostic.CS0618.severity = none
+
+# IDE0040: Adicionar modificadores de acessibilidade
+dotnet_style_require_accessibility_modifiers = never
